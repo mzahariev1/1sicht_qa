@@ -1,0 +1,50 @@
+<!--
+Holds all the custom styles for the application.
+
+Created by Hristo Klechorov
+-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:background">#008e76</item>
+    </style>
+
+    <!-- Header Layout theme -->
+    <style name="HeaderLayout">
+        <item name="android:background">#00796b</item>
+    </style>
+
+    <!-- Custom TextView Style for standard text views -->
+    <style name="CustomTextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <!-- Custom EditText Style -->
+    <style name="CustomEditText">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:inputType">text</item>
+        <item name="android:layout_marginTop">30dip</item>
+        <item name="android:layout_marginStart">20dip</item>
+        <item name="android:layout_marginEnd">20dip</item>
+    </style>
+
+    <!-- Admin Home Buttons -->
+    <style name="adminHomeBtns" >
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+
+    </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+</resources>

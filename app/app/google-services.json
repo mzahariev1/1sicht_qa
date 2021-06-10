@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "815857748239",
+    "firebase_url": "https://sicht-bf3a4.firebaseio.com",
+    "project_id": "sicht-bf3a4",
+    "storage_bucket": "sicht-bf3a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815857748239:android:2dd1292acfc89520",
+        "android_client_info": {
+          "package_name": "edu.kit.pse.a1sicht"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815857748239-knr5j6gm6ao4s76fq2hq2m06rie35880.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.kit.pse.a1sicht",
+            "certificate_hash": "3575dc65bee6c59108dc21da4181cd3e7116d9f8"
+          }
+        },
+        {
+          "client_id": "815857748239-gtnhv81m6hd4j5doofe3sb3na2u6n5ce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqfZVuURWPyCAlSu-4jkcyvm0CiaK9iBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815857748239-gtnhv81m6hd4j5doofe3sb3na2u6n5ce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

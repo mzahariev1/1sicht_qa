@@ -1,0 +1,43 @@
+\rhead{Änderungen an der Client-App}
+
+\section{Änderungen an der Client-App}
+
+    In diesem Kapitel werden die Unterschiede der Implementierung, im Gegensatz zum ursprünglichem Entwurf, genauer erklärt.
+
+    \subsection{create-Methoden in den repository-Klassen}
+
+        Im Entwurf war es noch so geplant, dass die Klassen im repository-package die Objekte zwischen der lokalen Datenbank der App und der Datenbank des Servers verwaltet. Dies sollte zum Beispiel das Einfügen und Aktualisierung von Objekten beinhalten.
+
+        Wir haben uns jedoch frühzeitig dazu entschieden, dass diese Klassen auch die Erstellung der Objekte übernehmen sollen. Dadurch werden zum Beispiel viele extra Aufrufe vermieden, welche Überprüfen ob ein bestimmtes Objekt schon existiert. Dies kann nun intern in den repository-Klassen geschehen, mit Hilfe von einer create Methode in jeder der entsprechenden Klasse.
+
+    \subsection{task-package}
+
+         Um die Daten im Hintergrund zu verarbeiten, damit der Nutzer die App weiter verwenden kann, ohne auf die Daten zu warten, haben wir ein neues package im repository-package erstellt.
+         Dieses task-package enthält für jede Dao-Klasse eine Klasse, die mit Hilfe von AsyncTasks die jeweiligen Operationen der Daos im Hintergrund ausführt.
+
+    \subsection{networking-package}
+
+        Laut dem Entwurf sollten die Methoden in den Service-Klassen Objekte oder Listen an Objekten zurückgeben. Dies würde jedoch zu Problemen führen, sollte die App auf eine Antwort des Servers warten.
+        Mit Hilfe der Observables kann die App nun weiterlaufen, ohne auf die Antwort zu warten.
+
+    \newpage
+
+    \subsection{utils-package}
+
+        Es wurde im ui-package ein weiteres package mit den Adapter-Klassen, die im Entwurf im ui/shared-package zu finden waren, und weiteren Klassen angelegt:
+
+        Einmal die CustomApp-Klasse um die Funktionalitäten der LocaleHelper-Bibliothek zu verwenden.
+        Auch für die Umsetzung der Funktionalitäten dieser Bibliothek wurde die Klasse BaseActivity gebraucht.
+
+        Um generell die Adapter in Views darzustellen und doppelten Code in den Adaptern selbst zu vermeiden, wurde die Klasse BaseViewHolder geschrieben, welche einen beliebigen Adapter an sich bindet und den Inhalt darstellt.
+
+        Des weiteren wurden die Employee- und Student-Adapter Klassen zu einer einzelnen UserAdapter-Klasse zusammengeführt.
+        Außerdem wurde der RequestsAdapter hinzugefügt, um die Bestätigungsanfragen der Mitarbeiter einem Administrator anzuzeigen und der ReviewAdapter um Klausureinsichten den Mitarbeitern und Administratoren anzuzeigen.
+
+    \subsection{entities-package}
+
+        Die Klassen im entities-package wurden auch verändert, damit das Verschicken und Empfangen von Gson Objekten vom und zum Server funktioniert.
+
+    \subsection{nullable Variablen}
+
+        Generell gab es diese Variablen, welche auch als nullable implementiert werden sollten, jedoch nicht im Entwurf so beschrieben wurden.

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="edu.kit.pse.a1sicht">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="GoogleAppIndexWarning" tools:targetApi="n">
+
+
+        <!-- UI Activities -->
+        <activity
+                android:name=".ui.shared.LogInActivity"
+                android:theme="@style/NoActionBar"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.student.ListReviewsActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.administrator.HomeAdminActivity"
+                  android:label="homeAdmin"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.shared.RegisterActivity"
+                  android:label="register"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.shared.SettingsActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.employee.ReviewCreationActivity"
+                  android:label="settings"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.administrator.ListUserActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.administrator.ListReviewActivity"
+                  android:label="list_review"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.employee.WaitingScreenActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.employee.ReviewScreenActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.student.HomeStudentActivity"
+                  android:label="student_home"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.student.StudentReviewScreenActivity"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name=".ui.employee.HomeEmployeeActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.administrator.ListRequestsActivity"
+                  android:screenOrientation="portrait"/>
+    </application>
+</manifest>

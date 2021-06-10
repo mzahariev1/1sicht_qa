@@ -1,0 +1,22 @@
+\rhead{Implementierung der Client-App}
+
+\section{Implementierung der Client-App}
+
+    In diesem Kapitel wird die Implementierung der Client-App beschrieben. Des Weiteren wird auf die aufgetretenen Schwierigkeiten eingegangen, aber auch auf die Dinge, die sich leichter umsetzen ließen als gedacht.
+
+    \subsection{Generelles zur Implementierung}
+
+        \subsubsection{Implementierung der Activities}
+
+            Zuerst wurden die größten Activities einzeln für sich erstellt, wie etwa die LoginActivity oder die ReviewCreationActivity. Das führte dazu, dass man früh schon die einzelnen Activites benutzen konnte, um deren Implementierung für sich zu testen.
+
+    \subsection{Schwierigkeiten bei der Implementierung}
+
+        \subsubsection{Sprachänderung}
+
+            Die Änderung der Nutzersprache für jeden Nutzer dauerte länger, da es zur Laufzeit geschehen sollte, und nicht eine andere Version der App beim Download runtergeladen wird.
+            Um das nun doch zu ermöglichen benutzen wir jetzt eine Bibliothek und konnten nicht einfach nur die Werte aus der .xml laden.
+
+        \subsubsection{Probleme mit Zeitstamps}
+
+            Da es bei den Klassen FOO und BAR zu Problemen mit den Zeitstamps kam, musste im database-package noch die Klasse Converters implementiert werden, um die long-Variablen in Timestamp-Variablen umzuwandeln.

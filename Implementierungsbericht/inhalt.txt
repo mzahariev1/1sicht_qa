@@ -1,0 +1,21 @@
+implementierung:
+
+X ansonsten ist es ohne vorbereitung schwierig sich selbst um den server kram zu kümmern (nicht unmöglich aber halt anstrengend)
+
+abweichungen entwurf:
+
+X Die task package, das ist die AsyncTask for background Operationen fuer lokale DB
+
+X Im networking die return values vom typ Observable
+
+? Im ViewModels gibt es manche Änderungen
+
+X Die utils package in ui , also Adapters usw
+
+? und vielleicht die Entities im app einbisschen verändert, damit zum Gson objekts von server und umgekehrt Kommunikation entstehen kann
+
+X Generell hätte man angeben sollen welche variablen als nullable implementiert werden sollen
+
+X Dafür haben wir im utils Paket CustomApp und BaseActivity wir haben ein Adapter mehr als gedacht
+
+? und glaub ich haben wir ein activity in student Paket mehr

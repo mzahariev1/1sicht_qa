@@ -1,0 +1,20 @@
+\rhead{Tests}
+
+\section{Tests}
+
+    In diesem Kapitel soll es um die verschiedenen Arten von Tests gehen, die wir eingesetzt haben um unsere App zu testen.
+
+    \subsection{JUnit Tests}
+
+        Mit Hilfe von JUnit Tests wurde die Geschäftslogik der App und des Servers getestet. Diese unterschieden sich von den Tests die wir bereits in der Implementierungsphase geschrieben haben nur in sofern, dass sie mehr Zeilen im Code überdeckt haben.
+
+    \subsection{Espresso Tests}
+
+        Espresso Tests gehören zu den UI-Tests, die wir geschrieben haben, um Bugs bei der UI der App zu finden. Bei diesen Tests wird mithilfe eines Emulators ein Android-Gerät simuliert, und bestimmte Buttons und Eingaben festgelegt, die während des Ablaufs des Tests simuliert werden.
+        Dabei können auch andere Variablen getestet werden, um die Funktion sicherzustellen.
+
+    \subsection{Manuelle Tests}
+
+        Während der Phase haben wir die App auch immer wieder manuell getestet, da dies einfacher und schneller war als Espresso-Tests zu schreiben. Dies eignete sich vor allem am Anfang, um ein genaueres Gefühl für die Art an Bugs zu bekommen, die bei unserer App häufiger vorkamen.
+        Dazu gehörten vor allem das Wechseln von Activities und die Aktionen von Buttons auf dem Screen und die Android-(Hardware-) Buttons.
+        Sollte jemand einen Bug dadurch finden, wurde er nummeriert und mitsamt Beschreibung und möglichem Lösungsansatz auf unserem internen Discord-Server gepostet.

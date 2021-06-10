@@ -1,0 +1,64 @@
+\documentclass[parskip=full]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage[toc,acronym]{glossaries}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{etoolbox}
+\usepackage{pdfpages}
+\graphicspath{{./resources/}}
+
+\usepackage{implementierungsbericht}
+
+\include{Kapitel/GlossarUndAkronyme}
+\makeglossaries
+
+\begin{document}
+    \include{Kapitel/Titelseite}
+    \setcounter{secnumdepth}{5}
+    \setcounter{page}{1}
+
+    \tableofcontents
+
+    \pagestyle{fancy}
+    \fancyhf{}
+    \lhead{1Sicht}
+
+    \chead{\includegraphics[scale=0.02]{logo/logo_header_black}}
+
+    \cfoot{\thepage}
+
+    \include{Kapitel/Einleitung}
+
+    \include{Kapitel/Zeitplan}
+
+    % \include{Kapitel/Wunschkriterien}
+
+    \include{Kapitel/AenderungenClient}
+
+    \include{Kapitel/AenderungenServer}
+
+    \include{Kapitel/ImplementierungClient}
+
+    \include{Kapitel/ImplementierungServer}
+
+    \include{Kapitel/Tests}
+
+    % \rhead{Glossar}
+    % \printglossary[nonumberlist]
+
+    % \newpage
+
+    % \rhead{Akronyme}
+    % \printglossary[type = \acronymtype, nonumberlist]
+
+\end{document}

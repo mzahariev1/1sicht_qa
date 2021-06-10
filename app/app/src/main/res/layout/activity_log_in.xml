@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+The layout for the login screen.
+
+Created by Tihomir Georgiev
+-->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="edu.kit.pse.a1sicht.ui.shared.LogInActivity"
+        style="@style/AppTheme">
+
+    <com.shobhitpuri.custombuttons.GoogleSignInButton
+            android:id="@+id/signInBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/sign_up"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    <ImageView
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_name"
+            android:layout_width="350dp"
+            android:layout_marginTop="100dp"
+            android:layout_height="200dp"
+            android:id="@+id/imageView"
+            android:layout_centerHorizontal="true"/>
+</RelativeLayout>

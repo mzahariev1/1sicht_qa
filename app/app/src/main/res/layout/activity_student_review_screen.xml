@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+The layout for the screen displaying a review to the student.
+
+Created by Hristo Klechorov
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="reviewScreenVM" type="edu.kit.pse.a1sicht.ui.employee.ReviewScreenViewModel"/>
+        <variable name="timeSlot" type="String"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/AppTheme">
+
+        <!-- Header -->
+        <RelativeLayout
+                android:id="@+id/relative_l"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                style="@style/HeaderLayout"
+                android:elevation="4dp">
+
+            <!-- When we implement ViewModels we should switch the text -->
+            <TextView
+                    android:text="@{reviewScreenVM.reviewName}"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title"
+                    android:layout_toStartOf="@+id/settingsButton"
+                    android:layout_marginEnd="45dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="16dp"/>
+
+            <ImageButton
+                    android:layout_width="51dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/avatar_stock"
+                    android:id="@+id/settingsButton"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="1dp" android:layout_gravity="end"
+                    android:background="@null" android:scaleType="fitCenter"/>
+
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/place_txt"
+                android:text="@string/reviewPlace"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+
+                android:layout_below="@id/relative_l"
+        />
+        <TextView
+                android:id="@+id/place_txt2"
+                android:text="@{reviewScreenVM.reviewLocation}"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/place_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_below="@id/relative_l"
+        />
+
+        <TextView
+                android:id="@+id/more_info_txt"
+                android:text="@string/moreInfo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/place_txt"
+                android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"/>
+
+        <!-- When we implement View Models we should switch the text here -->
+        <TextView android:id="@+id/moreInfo"
+                  android:text="@{reviewScreenVM.reviewInfo}"
+                  android:textColor="#000"
+                  android:textStyle="italic"
+                  android:textAlignment="center"
+                  android:layout_width="match_parent"
+                  android:layout_height="200dp"
+                  android:layout_below="@+id/place_txt"
+                  android:background="#D7E6E2"
+                  android:textSize="20sp"
+                  android:layout_marginTop="50dp"/>
+
+
+        <!-- Visible when the student hasn't registered himself for the review yet -->
+        <!-- Spinner for the drop down menu with timeslot length choices -->
+        <TextView
+            android:id="@+id/timeslot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeslot_tv"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/choose_time_slot"
+            android:textStyle="bold" />
+
+        <Spinner android:id="@+id/timeslotSpinner"
+                 android:layout_width="wrap_content"
+                 android:layout_height="45dp"
+                 android:background="@android:drawable/btn_dropdown"
+                 android:layout_below="@+id/timeslot"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginStart="5dp"
+                 android:spinnerMode="dropdown"/>
+
+        <Button
+                android:id="@+id/review_sign_up_btn"
+                android:text="@string/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_shape"
+                    />
+
+        <!-- Visible when the student has already registered himself for the review -->
+        <TextView
+                android:id="@+id/timeslot_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/timeslot"
+                android:layout_below="@+id/moreInfo"
+                style="@style/CustomTextView"
+                android:layout_alignStart="@+id/moreInfo"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"
+                android:visibility="visible"/>
+
+        <TextView
+                android:id="@+id/tv_showTimeslot"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_below="@+id/moreInfo"
+                android:text="@{timeSlot}"
+                android:textSize="19sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="30dp"
+                style="@style/CustomTextView"
+                android:visibility="visible"/>
+
+        <Button
+                android:id="@+id/btn_changeTimeslot"
+                android:text="@string/changeTimeslot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="120dp"
+                android:visibility="visible"
+                android:background="@drawable/button_shape"/>
+
+        <Button
+                android:id="@+id/btn_deregister"
+                android:text="@string/deregister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:visibility="visible"
+                android:background="@drawable/button_shape"/>
+
+    </RelativeLayout>
+</layout>

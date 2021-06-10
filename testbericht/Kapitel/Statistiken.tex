@@ -1,0 +1,16 @@
+\rhead{Statistiken}
+
+\section{Statistiken}
+
+    In diesem Kapitel soll es um Statistiken rund um die Tests gehen. Dazu gehören zum Beispiel die Anzahl der Tests, die verschiedenen Testmethoden und wie diese im Verhältnis zu einander stehen und die Testüberdeckung an sich.
+
+    \subsection{Statistiken der App}
+
+        Der Code in der App setze sich zum einen aus Geschäftslogik, zum anderen aus UI-Code zusammen. Da wir die UI größtenteils mit Espresso-Tests getestet haben, sind diese nicht voll in der Testabdeckung mit eingerechnet. Somit kam es zu einer Testabdeckung von \textbf{42 \%} bei 24 Testklassen und 2 Util Klassen.
+
+    \subsection{Statistiken des Servers}
+
+        Für den Code im Server wurden insgesamt 38 Tests geschrieben, von denen zum Zeitpunkt der Abgabe 36 laufen.
+        Die zwei Tests die nicht laufen sind\\ \code{testGetTimeslotOfStudentForReview()} und \code{testDeleteByEmployeeId()}. Grund dafür ist die parent-child Beziehung zwischen Employee, Review und Timeslot. Es gibt dort Constrains die nicht eingehalten werden, jedoch ist das kein großes Problem, da wir vermuten, dass es sich um Inkonsistenzen in der Datenbank handelt, die während des Tests entstehen.
+
+        Insgesamt beträgt die Testüberdeckung der Controller-Klassen \textbf{88,5 \%}. Da die Controller Klassen und die Methoden darin die restlichen Klassen und deren Methoden aufrufen, lässt sich diese Prozentzahl auch auf den restlichen Server ableiten.

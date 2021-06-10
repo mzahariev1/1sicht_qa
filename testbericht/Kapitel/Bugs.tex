@@ -1,0 +1,53 @@
+\rhead{Bugs}
+
+\section{Bugs}
+
+	In diesem Kapitel soll es um die Bugs gehen, die wir nach der Implementierungsphase durch unsere Tests entdeckt haben, welche Ursachen sie hatten und wie wir sie schließlich behoben haben.
+
+	\bug{Erstellung von Klausureinsichten mehrmals möglich}
+		{In der ReviewCreationActivity kann bei mehrmaligem Drücken des \enquote{Speichern}-Buttons eine Klausureinsicht mehrmals erstellt werden.}
+		{Zum einen wird nach dem Speichern der Klausureinsicht nicht die Activity gewechselt, zum anderen wird beim Speichern der Klausureinsicht nicht überprüft, ob es schon eine Klausureinsicht an diesem Datum und in diesem Raum gibt.}
+		{Nach dem Betätigen des \enquote{Speichern}-Buttons wird die Activity gewechselt zur HomeEmployeeActivity. Danach ist es auch nicht mehr möglich die gleiche Einsicht nochmal zu erstellen.}
+
+	\bug{Mehrere Rollen pro Account möglich}
+		{Ein Account kann mehrere Rollen haben, wie zum Beispiel Student und Mitarbeiter gleichzeitig. Dies bemerkt man, wenn man den Studenten Account löscht und sich neu registrieren will, aber stattdessen als Mitarbeiter eingeloggt wird.}
+		{Beim Einfügen in die Datenbank wird nicht überprüft, ob mit dieser E-Mail-Adresse und GoogleId schon eine andere Rolle für diesen Nutzer vergeben ist.}
+		{In der Datenbank wird überprüft, ob der Nutzer schon vorhanden ist und wird dann dementsprechend eingeloggt. Sollte kein Account vorhanden sein, wird der Nutzer zur Registrierung weitergeleitet.}
+
+	\bug{Unnötiges Austauschen der Google-Accounts der Nutzer}
+		{Das Bearbeiten der GoogleId sollte nicht möglich sein, um später Probleme mit dem Login oder anderem zu vermeiden.}
+		{Die Methode \code{updateById()} in den Klassen EmployeeRepository und StudentRepository aktualisiert bei der Änderung von persönlichen Daten auch die GoogleId.}
+		{Die Methode \code{updateById()} beachtet beim Aufruf nicht mehr die GoogleId, sondern nur noch die anderen Attribute eines Studenten oder Mitarbeiters.}
+
+	\bug{Aus dem Einstellungs-Bildschirm ausloggen}
+		{Wenn man in der SettingsActivity den \enquote{Ausloggen}-Button benutzt und dann den Back-Button von Android, dann wird man zur SettingsActivity weitergeleitet, obwohl man schon ausgeloggt sein sollte.}
+		{Die Methode \code{onBackPressed()} in der LoginActivity wurde nicht überschrieben.}
+		{Die Methode \code{onBackPressed()} wird überschrieben, sodass beim drücken des Back-Buttons nichts passiert.}
+
+	\bug{Button zum Bestätigen von Anfragen falsch angezeigt}
+		{Auf manchen Geräten wurde bei den Administratoren die Buttons zur Bestätigung von Mitarbeitern nicht richtig, oder gar nicht angezeigt.}
+		{Das Alignment des Buttons war nicht richtig eingestellt, sodass der Button rechts daneben und das Textfeld links daneben zwar richtig dargestellt wurden, der Button dann jedoch überdeckt wurde.}
+		{Das Alignment des Buttons wurde richtig eingestellt, damit der Button auf allen Geräten korrekt angezeigt wird.}
+
+	\bug{Schon vergangene Einsichten werden noch angezeigt}
+		{Obwohl das Datum an dem die Klausureinsicht stattgefunden hat schon in der Vergangenheit liegt, wird sie trotzdem weiterhin in der Anmeldeübersicht für Studenten angezeigt.}
+		{In der ListReviewsActivity werden die Klausureinsichten nicht überprüft. Alle Klausureinsichten die auf dem Server existieren werden angezeigt.}
+		{Die Klausureinsichten werden nun nur für Studenten angezeigt, wenn sie noch in der Zukunft stattfinden werden. Mitarbeiter können weiterhin alle von ihnen erstellte Klausureinsichten einsehen und Administratoren können generell alle Klausureinsichten ansehen.}
+
+	\easybug{Falsch angezeigtes Datum bei Erstellung von Klausureinsichten}
+		{Das Datum und die Zeit an der eine Klausureinsicht stattfinden soll wurde bei manchen Handys nicht korrekt dargestellt.}
+		{Die Position des Datums und der Zeit wurden angepasst, sodass sie auf allen Geräten korrekt dargestellt wird.}
+
+	\easybug{Die Erstellung einer Klausureinsicht kann nicht abgebrochen werden}
+		{Beim Drücken des \enquote{Abbrechen}-Buttons passiert nichts, jedoch sollte die Erstellung der Klausureinsicht abgebrochen werden und die Daten die bisher eingegeben wurden gelöscht werden.}
+		{Sollte der Nutzer jetzt den \enquote{Abbrechen}-Button betätigen, wird er zur Übersicht über alle Klausureinsichten die er erstellt hat weitergeleitet.}
+
+	\bug{Änderungen von persönlichen Daten wurden nicht überall übernommen}
+		{Wenn ein Nutzer seine persönlichen Daten geändert hat, wurden sie nur an den Server geschickt und nicht so in der lokalen Datenbank aktualisiert.}
+		{Die Methode um die Daten in der lokalen Datenbank zu aktualisieren wurde nicht aufgerufen, stattdessen wären die Daten erst bei einer erneuten Anfrage an den Server aktualisiert worden.}
+		{Die If-Abfragen in den Employee- und AdministratorRepository Klassen wurden ersetzt durch einen direkten Aufruf der Aktualisierung.}
+
+	\bug{Nach der Registrierung und dem Login wird die falsche Activity aufgerufen}
+		{Wenn man nach der Registrierung als Student, oder nach dem Login als beliebiger Nutzer auf dem Home Screen auf den Back-Button drückt, wird man zurück zur Registrierung bzw. zum Login geleitet.}
+		{Die Methode \code{onBackPressed()} ist bei der HomeActivity so implementiert, dass der Nutzer auf die zuletzt benutze Activity geleitet wird.}
+		{Die \code{onBackPressed()} Methode macht bei den HomeActivities nichts mehr.}

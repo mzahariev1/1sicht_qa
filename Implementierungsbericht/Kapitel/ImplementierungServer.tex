@@ -1,0 +1,21 @@
+\rhead{Implementierung des Servers}
+
+\section{Implementierung des Servers}
+
+    In diesem Kapitel wird die Implementierung des Servers beschrieben. Des Weiteren wird auf die aufgetretenen Schwierigkeiten eingegangen, aber auch auf die Dinge, die sich leichter umsetzten ließen als gedacht.
+
+    \subsection{Generelles zur Implementierung}
+
+        Bei der Implementierung der Geschäftslogik des Servers selbst stieß man auf wenigere Probleme, da es sich dabei quasi nur um Kotlin-Code handelt. Die Teile des Servers die sich jedoch um Konnektivität und andere Ktor-abhängige Abläufe gekümmert haben, dauerten deutlich länger zu implementieren, wie es auch noch im späteren Verlauf dieses Kapitels beschrieben wird.
+
+    \subsection{Schwierigkeiten bei der Implementierung}
+
+        \subsubsection{Gehosteter Server}
+
+            Als Host für den Server hatten wir uns für BW-Cloud entschieden. Zum einen auf die Empfehlung der Betreuer, zum anderen da der Dienst kostenlos ist.
+            In den letzten zwei Wochen der Implementierungsphase ist dieser Server jedoch mehrmals abgestürzt, ohne das wir eine Möglichkeit gesehen haben den Fehler zu beheben. Dies führte dazu, dass wir jedes Mal eine neue Instanz anlegen und einrichten mussten.
+
+        \subsubsection{Generelle Verzögerungen}
+
+            Da es sich bei Ktor um ein relativ neues Framework handelt, gab es zwar Dokumentation zu der Verwendung, jedoch war es eher schwierig weitere Antworten auf Fragen, in Form von YouTube-Videos oder StackOverflow-Beiträgen zu finden.
+            Das führte dazu, dass sie die Implementierung des Servers verzögerte, da man viele Dinge durch Trial-and-Error herausfinden musste und mehrmals die Dokumentation lesen musste, um diese voll zu verstehen.

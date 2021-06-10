@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+The layout for the waiting screen.
+
+Created by Hristo Klechorov
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              style="@style/AppTheme">
+
+    <TextView
+            android:text="@string/waitingMessage"
+            style="@style/CustomTextView"
+            android:layout_marginTop="282dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:textAlignment="center"/>
+</RelativeLayout>

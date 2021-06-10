@@ -1,0 +1,50 @@
+@startgantt
+
+  Project starts the 2nd of July 2019
+
+  [Plan erstellen] lasts 2 days
+
+  --App entwickeln --
+
+  [Activities implementieren] lasts 10 days
+  [Plan erstellen] -> [Activities implementieren]
+
+  [database.entities package implementieren] lasts 2 days
+
+  [database.dao package implementieren] lasts 2 days
+
+  [database package implementieren] lasts 1 day
+
+  [Plan erstellen] -> [database.entities package implementieren]
+  [database.entities package implementieren] -> [database.dao package implementieren]
+  [database.dao package implementieren] -> [database package implementieren]
+
+  [Adapter-Klassen implementieren] lasts 5 days
+  [Activities implementieren] -> [Adapter-Klassen implementieren]
+
+  [repository package implementieren] lasts 7 days
+  [networking package implementieren] lasts 7 days
+  [database package implementieren] -> [repository package implementieren]
+  [database package implementieren] -> [networking package implementieren]
+
+  -- Server entwickeln --
+
+  [db package implementieren] lasts 5 days
+  [server-repository package implementieren] lasts 5 days
+  [controllers package implementieren] lasts 5 days
+
+  [Plan erstellen] -> [db package implementieren]
+  [db package implementieren] -> [server-repository package implementieren]
+  [server-repository package implementieren] -> [controllers package implementieren]
+
+  -- Testen --
+
+  [Mock für Server erstellen] lasts 2 days
+  [Mock für App erstellen] lasts 2 days
+
+  '[Mock für App erstellen] -> [Testen]
+  [Mock für Server erstellen] -> [Testen]
+
+  [Testen] lasts 25 days
+
+@endgantt

@@ -1,0 +1,19 @@
+\rhead{Tests}
+
+\section{Tests}
+
+    \subsubsection{Tests für die Client-App}
+
+        Die Client-App hat viele verschiedene Facetten, die alle getestet werden müssen:
+
+        Zum einen die Klassen aus den packages repository und database, die die lokale Datenbank implementieren und mit ihr interagieren. 
+
+        Des Weiteren die Klassen die für die UI zuständig waren, aus dem ui package. Diese Klassen wurden vor allem mit Espresso Tests getestet, um die einzelnen Buttons, Textfelder etc. auf ihre Funktion zu prüfen.
+
+        Schlussendlich noch die Konnektivität zum Server selbst.
+
+    \subsubsection{Tests für den Server}
+
+        Die Tests für den Server lassen sich in zwei Kategorien einteilen: Einmal die Tests für die Konnektivität und die Tests für die Geschäftslogik im Server selbst.
+
+        Zum Testen der Konnektivität wurde die TestEngine von Ktor selbst verwendet. Für die Tests wurde lokal ein Server gestartet und die HTTP-Anfragen wurden simuliert und auf Korrektheit überprüft.

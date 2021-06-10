@@ -1,0 +1,54 @@
+\documentclass[parskip=full]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage{csquotes}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage[toc,acronym]{glossaries}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{etoolbox}
+\usepackage{pdfpages}
+\usepackage{bchart}
+\graphicspath{{./resources/}}
+
+\usepackage{testbericht}
+
+\begin{document}
+    \include{Kapitel/Titelseite}
+    \setcounter{secnumdepth}{5}
+    \setcounter{page}{1}
+
+    \tableofcontents
+
+    \pagestyle{fancy}
+    \fancyhf{}
+    \lhead{1Sicht}
+
+    \chead{\includegraphics[scale=0.02]{logo/logo_header_black}}
+
+    \cfoot{\thepage}
+
+    \include{Kapitel/Einleitung}
+
+    \include{Kapitel/Tests}
+
+    \include{Kapitel/Bugs}
+
+    \include{Kapitel/Statistiken}
+
+    \include{Kapitel/UmfrageUndErgebnisse}
+
+\end{document}
